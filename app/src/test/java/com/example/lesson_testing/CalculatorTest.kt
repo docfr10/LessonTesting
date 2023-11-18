@@ -26,7 +26,14 @@ class CalculatorTest {
     }
 
     @Test(timeout = 1000)
-    fun requestTest() {}
+    fun requestTest() {
+        val largeArray = IntArray(100_000_000) { it }
+        var sum = 0
+        for (number in largeArray) {
+            sum += number
+        }
+        println("Сумма: $sum")
+    }
 
     @After
     fun tearDown() {
